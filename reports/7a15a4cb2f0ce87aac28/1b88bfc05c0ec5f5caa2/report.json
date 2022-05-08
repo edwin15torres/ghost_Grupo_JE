@@ -1,0 +1,61 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login;login-successfully",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Login Successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 57000000,
+              "error_message": "The CHROME_PATH environment variable must be set to a Chrome/Chromium executable no older than Chrome stable.\nError\n    at new LauncherError (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/chrome-launcher/dist/utils.js:26:22)\n    at new ChromePathNotSetError (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/chrome-launcher/dist/utils.js:33:9)\n    at Object.linux (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/chrome-launcher/dist/chrome-finder.js:128:15)\n    at Function.getFirstInstallation (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/chrome-launcher/dist/chrome-launcher.js:126:51)\n    at Launcher.launch (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/chrome-launcher/dist/chrome-launcher.js:185:43)\n    at launch (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/chrome-launcher/dist/chrome-launcher.js:37:20)\n    at launchChrome (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/devtools/build/launcher.js:80:55)\n    at launch (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/devtools/build/launcher.js:179:16)\n    at Function.newSession (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/devtools/build/index.js:54:54)\n    at Object.remote (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/webdriverio/build/index.js:77:43)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to ghost: \"http://localhost:2368/ghost/#/signin\"",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 3000000,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'deleteSession')\n    at WebClient.<anonymous> (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/WebClient.js:109:59)\n    at step (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/WebClient.js:59:23)\n    at Object.next (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/WebClient.js:40:53)\n    at /home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/WebClient.js:34:71\n    at new Promise (<anonymous>)\n    at __awaiter (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/WebClient.js:30:12)\n    at WebClient.stop (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/WebClient.js:104:16)\n    at WebClient.<anonymous> (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/Client.js:109:51)\n    at step (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/Client.js:67:23)\n    at Object.next (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/Client.js:48:53)\n    at fulfilled (/home/rafael/Documents/MISO/C2_Automatizacion_Pruebas/week5/kraken-project/node_modules/kraken-node/lib/clients/Client.js:39:58)"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@user1",
+            "line": 3
+          },
+          {
+            "name": "@web",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login",
+    "tags": [],
+    "uri": "features/my_first.feature"
+  }
+]
