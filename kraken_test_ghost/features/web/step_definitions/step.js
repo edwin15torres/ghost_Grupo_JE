@@ -58,3 +58,4 @@ Then('I validate exists class element {string}', async function (string) {
     let element = await this.driver.$('.' + string);
     return await element;
 });
+
