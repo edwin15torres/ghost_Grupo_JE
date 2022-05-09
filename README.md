@@ -44,21 +44,36 @@ Los 28 escenarios seleccionados para las pruebas con Kraken pertenecen a 16 func
 | 27 | Listar Posts                                   | Consultar el listado de Posts/Publicaciones cread(o)as.                                                        | Positivo          |
 | 28 | Filtrar Posts por valoración                   | Organizar la lista de Posts creados por valoración.                                                            | Positivo          |
 
-Funcionalidades:
-Crear Miembro
-Editar Miembro
-Eliminar Miembro, Eliminar varios Miembros al tiempo
-Asignar labels a varios miembros al tiempo
-Buscar Miembro por nombre
-Filtrar miembros por Nombre, email y label
-Listar Miembros
-Login
-Logout
-Profile
-Invitar Staff
-Cambiar tema, Visualizar el sitio
+## Pruebas e2e con Cypress
 
-Instrucciones Ejecución Pruebas Cypress
+Los 22 escenarios seleccionados a las funcionalidades de Ghost descritas a continuación:
+
+| Nº | Funcionalidad                                  | Escenario                                                                                           | Tipo de Escenario |
+| -- | ---------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------- |
+| 1  | Iniciar sesión                                 | Incio de sesión con usuario y password correctos.                                                   | Positivo          |
+| 2  | Iniciar sesión                                 | Incio de sesión con usuario y password incorrectos.                                                 | Negativo          |
+| 3  | Crear Post                                     | Creación de un Post en Ghost.                                                                       | Positivo          |
+| 4  | Editar Post                                    | Edición de un Post en Ghost.                                                                        | Positivo          |
+| 5  | Editar Post                                    | Edición de un Post en Ghost.                                                                        | Negativo          |
+| 6  | Crear Página                                   | Creación de una página en Ghost                                                                     | Positivo          |
+| 7  | Editar Perfil de Usuario                       | Edición de los datos del perfil de un usuario en Ghost                                              | Positivo          |
+| 8  | Crear Tag                                      | Creación de un Tag en Ghost                                                                         | Positivo          |
+| 9  | Editar Tag                                     | Edición de los datos de un Tag en Ghost                                                             | Positivo          |
+| 10 | Cerrar Sesión                                  | Cerrar una sesión activa en Ghost                                                                   | Positivo          |
+| 11 | Listar Post                                    | Consultar el listado de Posts/Publicaciones creado(a)s.                                             | Positivo          |
+| 12 | Crear Página                                   | Crear una pagina en el sitio, con configuraciones adicionales, tags, autores, titulo y descripción. | Positivo          |
+| 13 | Listar Páginas                                 | Consultar el listado de Páginas creado(a)s.                                                         | Positivo          |
+| 14 | Crear Miembro                                  | Crea un miembro en Ghost.                                                                           | Positivo          |
+| 15 | Eliminar Miembro                               | Elimina un miembro en Ghost.                                                                        | Positivo          |
+| 16 | Eliminar Miembros al Tiempo                    | Eminina varios miembos en Ghost.                                                                    | Positivo          |
+| 17 | Asignar Labels a varios Miembros               | Adicionar varios labeles a varios Miembros al tiempo.                                               | Positivo          |
+| 18 | Buscar Miembro                                 | Buscar un miembro por nombre en Ghost.                                                              | Positivo          |
+| 19 | Filtrar Miembro                                | Filtrar miembros por nombre en Ghost.                                                               | Positivo          |
+| 20 | Listar Miembro                                 | Listar miembros  en Ghost.                                                               | Positivo          |
+| 21 | Inviatr Staff                                  | Invitar miembros al staff  en Ghost.                                                               | Positivo          |
+| 22 | Cambiar tema                                   | Cambiar tema de la página en Ghost.                                                               | Positivo          |
+
+## Instrucciones Ejecución Pruebas Cypress
 
 Desde una consola PowerShell haga lo siguiente:
 
