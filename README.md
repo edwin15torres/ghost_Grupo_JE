@@ -1,3 +1,14 @@
+# Proyecto Pruebas automatizadas 
+***
+## Integrantes
+
+| Nombre                          | Correo                      |
+| ------------------------------- | --------------------------- |
+| Edwin Adolfo Torres Leguizamon | ea.torresl1@uniandes.edu.co |
+| Jadir Hernan Acosta Hernandez   | jh.acosta@uniandes.edu.co   |
+| Rafael Ortiz | rd.ortizr1@uniandes.edu.co |
+| Luis Eduardo Padilla Caviedes    | l.padillac2@uniandes.edu.co  |
+
 ##Pruebas e2e con Kraken
 
 Los 28 escenarios seleccionados para las pruebas con Kraken pertenecen a 16 funcionalidades de Ghost descritas a continuación:
