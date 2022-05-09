@@ -1,4 +1,5 @@
-###Pruebas e2e con Kraken
+##Pruebas e2e con Kraken
+
 Los 28 escenarios seleccionados para las pruebas con Kraken pertenecen a 16 funcionalidades de Ghost descritas a continuación:
 
 | Nº | Funcionalidad                                  | Escenario                                                                                                      | Tipo de Escenario |
