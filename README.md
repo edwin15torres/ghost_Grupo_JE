@@ -92,22 +92,12 @@ Desde una consola PowerShell haga lo siguiente:
 6. La prueba se ejecutara
 
 
-
 Nota: ejecutar sobre chrome
            Las pruebas se hicieron en Ghost versión 4.41.3
 
 
 
-
-
-
-
-
-
-
-
-
-Instrucciones Ejecución Pruebas Kraken
+## Instrucciones Ejecución Pruebas Kraken
 
 
 Desde una consola PowerShell haga lo siguiente:
@@ -135,8 +125,6 @@ Desde una consola PowerShell haga lo siguiente:
    - ubiquese el directorio nuevo_dir creado en el paso 2
    
    - ejecute la instrucción: ./node_modules/kraken-node/bin/kraken-node run
-
-
 
 
 Nota: ejecutar sobre chrome
