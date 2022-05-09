@@ -5,14 +5,14 @@ describe('Login Feature', () => {
 
     it('should login successfully', () => {
         cy.get('[id="login"]').within(() => {
-            cy.get('input[type="email"]').type('rd.ortizr1@uniandes.edu.co')
-            cy.get('input[type="password"]').type('@CruelSun1802')
+            cy.get('input[type="email"]').type('email')
+            cy.get('input[type="password"]').type('password')
             cy.get('.login').click()
         });
         cy.wait(1000)
 
         cy.get('.gh-user-email').then(($text) => {
-            expect($text[0].innerText).to.equal('rd.ortizr1@uniandes.edu.co')
+            expect($text[0].innerText).to.equal('email')
         });
     });
 
@@ -31,8 +31,8 @@ describe('Login Feature', () => {
 
     it('should logout successfully', () => {
         cy.get('[id="login"]').within(() => {
-            cy.get('input[type="email"]').type('rd.ortizr1@uniandes.edu.co')
-            cy.get('input[type="password"]').type('@CruelSun1802')
+            cy.get('input[type="email"]').type('email')
+            cy.get('input[type="password"]').type('password')
             cy.get('.login').click()
         });
         cy.wait(1000)
