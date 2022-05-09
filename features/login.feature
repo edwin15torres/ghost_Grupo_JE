@@ -19,7 +19,7 @@ Feature: Login
     Then  I see login error
 
   @user3 @web
-  Scenario: Login Failed
+  Scenario: Logout
     Given I navigate to page "http://localhost:2368/ghost/#/signin"
     When  I enter email "<USERNAME>"
     When  I enter password "<PASSWORD>"
