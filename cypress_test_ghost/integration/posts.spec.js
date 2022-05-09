@@ -10,8 +10,8 @@ describe('Posts Feature', () => {
     it('should create a draft post', () => {
 
         cy.get('[id="login"]').within(() => {
-            cy.get('input[type="email"]').type('rd.ortizr1@uniandes.edu.co')
-            cy.get('input[type="password"]').type('@CruelSun1802')
+            cy.get('input[type="email"]').type('email')
+            cy.get('input[type="password"]').type('password')
             cy.get('.login').click()
         });
         cy.wait(1000)
@@ -37,8 +37,8 @@ describe('Posts Feature', () => {
 
     it('should publish post', () => {
         cy.get('[id="login"]').within(() => {
-            cy.get('input[type="email"]').type('rd.ortizr1@uniandes.edu.co')
-            cy.get('input[type="password"]').type('@CruelSun1802')
+            cy.get('input[type="email"]').type('email')
+            cy.get('input[type="password"]').type('password')
             cy.get('.login').click()
         });
         cy.wait(1000)
