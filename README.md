@@ -11,7 +11,7 @@
 
 ## Pruebas e2e con Kraken
 
-Los 28 escenarios seleccionados para las pruebas con Kraken pertenecen a 10 funcionalidades de Ghost descritas a continuación:
+Los 18 escenarios seleccionados para las pruebas con Kraken pertenecen a 10 funcionalidades de Ghost descritas a continuación:
 
 | Nº | Funcionalidad                                  | Escenario                                                                                                      | Tipo de Escenario |
 | -- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------- |
@@ -107,10 +107,12 @@ Desde una consola PowerShell haga lo siguiente:
 
 7. Cree la variable de entorno CHROME_PATH y asignele la ruta al archivo ejecutable de google chrome.
 
-8. Descargue del repositorio los archivos con extension .feature y copielos en el subdirectorio features localizado    en el directorio creado en el paso 2.
+8. Descargue del repositorio los archivos con extension .feature y copielos en el subdirectorio features localizado en el directorio creado en el paso 2.
 
 9. Siempre que vaya a ejecutar estos archivos de prueba:
    
+   - Cambiar en el archivo properties.json los valores del username y el password que usará para las pruebas
+
    - ubiquese el directorio nuevo_dir creado en el paso 2
    
    - ejecute la instrucción: ./node_modules/kraken-node/bin/kraken-node run
