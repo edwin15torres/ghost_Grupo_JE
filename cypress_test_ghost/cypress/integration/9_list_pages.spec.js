@@ -1,8 +1,10 @@
 var faker = require("faker");
+const baseUrl = Cypress.config("baseUrl");
 const ghostUrl = Cypress.config("ghostUrl");
 const ghostAuthUrl = Cypress.config("ghostAuthUrl");
 const email = Cypress.config("email");
 const password = Cypress.config("password");
+const appReference = Cypress.config("appReference");
 
 describe("Test - list created pages in Ghost", () => {
   beforeEach(() => {
@@ -15,6 +17,7 @@ describe("Test - list created pages in Ghost", () => {
     cy.get(".gh-nav-top").contains("Pages").click();
     cy.wait(2000);
     cy.get(".gh-canvas-title").should("be.visible");
+    cy.screenshot(`step_1/${appReference}-list-pages`);
   });
 });
 
@@ -24,6 +27,9 @@ Cypress.Commands.add("login", () => {
     .request({
       url: ghostAuthUrl,
       method: "POST",
+      headers: {
+        Referer: baseUrl,
+      },
       body: {
         username: email,
         password: password,

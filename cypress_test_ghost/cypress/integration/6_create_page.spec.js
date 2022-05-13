@@ -1,8 +1,11 @@
 var faker = require("faker");
+const baseUrl = Cypress.config("baseUrl");
 const ghostUrl = Cypress.config("ghostUrl");
 const ghostAuthUrl = Cypress.config("ghostAuthUrl");
 const email = Cypress.config("email");
 const password = Cypress.config("password");
+const appReference = Cypress.config("appReference");
+const appVersion = Cypress.config("appVersion");
 
 describe("Test - creating a page in Ghost", () => {
   beforeEach(() => {
@@ -16,8 +19,12 @@ describe("Test - creating a page in Ghost", () => {
     it("Create a Page", () => {
       cy.get(".gh-nav-top").contains("Pages").click();
       cy.wait(2000);
-      cy.get(".ember-view.gh-btn.gh-btn-green").click();
+      cy.screenshot(`step_1/${appReference}-create-page`);
+      if (appVersion == "4.47.0") cy.get(".ember-view.gh-btn.gh-btn-primary.view-actions-top-row").click();
+      else cy.get(".ember-view.gh-btn.gh-btn-green").click();
       cy.wait(2000);
+      cy.screenshot(`step_2/${appReference}-create-page`);
+
       cy.get(".gh-editor-title.ember-text-area.gh-input.ember-view").click();
       cy.get(".gh-editor-title.ember-text-area.gh-input.ember-view").type(
         title
@@ -25,11 +32,7 @@ describe("Test - creating a page in Ghost", () => {
       cy.get(
         ".koenig-editor__editor.__mobiledoc-editor.__has-no-content"
       ).click();
-      //   const tagName = faker.lorem.word(7);
-      //   cy.get("button.post-settings").click();
-      //   cy.get("input[id=tag-input]").click();
-      //   cy.get("input[id=tag-input]").type(tagName);
-      //   cy.get("input[id=tag-input]").type("{enter}");
+      if (appVersion == "4.47.0") cy.get(".ember-view.gh-editor-back-button").click();
     });
     it("Verify successfully Page creation", () => {
       cy.get(".gh-nav-top").contains("Page").click();
@@ -45,6 +48,9 @@ Cypress.Commands.add("login", () => {
     .request({
       url: ghostAuthUrl,
       method: "POST",
+      headers: {
+        Referer: baseUrl,
+      },
       body: {
         username: email,
         password: password,

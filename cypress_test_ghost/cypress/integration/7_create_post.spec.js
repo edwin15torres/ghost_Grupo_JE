@@ -1,11 +1,16 @@
 var faker = require("faker");
+const baseUrl = Cypress.config("baseUrl");
+const ghostUrl = Cypress.config("ghostUrl");
+const ghostAuthUrl = Cypress.config("ghostAuthUrl");
 const email = Cypress.config("email");
 const password = Cypress.config("password");
+const appReference = Cypress.config("appReference");
+const appVersion = Cypress.config("appVersion");
 
 describe("Test creating a post in Ghost", () => {
   beforeEach(() => {
     cy.login().then((user) => {
-      cy.visit("http://localhost:2368/ghost/");
+      cy.visit(ghostUrl);
       cy.wait(2000);
     });
   });
@@ -14,8 +19,14 @@ describe("Test creating a post in Ghost", () => {
     it("Create a Post", () => {
       cy.get(".gh-nav-top").contains("Posts").click();
       cy.wait(2000);
-      cy.get(".ember-view.gh-btn.gh-btn-green").click();
+      cy.screenshot(`step_1/${appReference}-create-post`);
+      if (appVersion == "3.41.1") {
+        cy.get(".ember-view.gh-btn.gh-btn-green").click();
+      } else {
+        cy.get(".ember-view.gh-btn.gh-btn-primary.view-actions-top-row").click();
+      }
       cy.wait(2000);
+      cy.screenshot(`step_2/${appReference}-create-post`);
       cy.get(".gh-editor-title.ember-text-area.gh-input.ember-view").click();
       cy.get(".gh-editor-title.ember-text-area.gh-input.ember-view").type(
         title
@@ -23,6 +34,7 @@ describe("Test creating a post in Ghost", () => {
       cy.get(
         ".koenig-editor__editor.__mobiledoc-editor.__has-no-content"
       ).click();
+      if (appVersion == "4.47.0") cy.get(".ember-view.gh-editor-back-button").click();
     });
     it("Verify successfully Post creation", () => {
       cy.get(".gh-nav-top").contains("Posts").click();
@@ -36,8 +48,11 @@ Cypress.Commands.add("login", () => {
   // 1. Send log in API call
   return cy
     .request({
-      url: "http://localhost:2368/ghost/api/v3/admin/session",
+      url: ghostAuthUrl,
       method: "POST",
+      headers: {
+        Referer: baseUrl,
+      },
       body: {
         username: email,
         password: password,
