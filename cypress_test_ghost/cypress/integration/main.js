@@ -72,8 +72,11 @@ async function executeTest() {
       analysisTime: data.analysisTime,
     };
 
+    let datetime = new Date()
+    let formatted_date = datetime.getFullYear() + "-" + (datetime.getMonth() + 1) + "-" + datetime.getDate() + " " + datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds() 
+
     html += browser(
-      now,
+      formatted_date,
       resultInfo,
       `../screenshots/${folderScenario}/${folder}/${nameFile[0]}`,
       `../screenshots/${folderScenario}/${folder}/${nameFile[1]}`,
@@ -103,56 +106,90 @@ function browser(
   folder
 ) {
   return `
-		<body>
-			<form id="form1">
-			  <div class="div-table">
-			    <div class="btitle">
-					<h2>Scenario: ${folderScenario}</h2>
-          <h4>Step: ${folder}</h4>
-				</div>
-					 <div class="div-table-row">
-                     <div class="div-table-col" align="center"><strong>Fecha Ejecución</strong></div>
-                     <div  class="div-table-col"><strong>Imagen Refencia</strong></div>
-                     <div  class="div-table-col"><strong>Imagen Modificada</strong></div>
-                     <div  class="div-table-col"><strong>Diferencias</strong></div>
-                     <div  class="div-table-col"><strong>Descripción</strong></div>
-                  </div>
-					<div class="div-table-row">
-						<div class="div-table-col">${datetime} </div>
-						<div class="div-table-col"> <img class="img2 zoom" src="${imagenReferencia}" id="refImage" label="Reference"></div>
-						<div class="div-table-col">   <img class="img2 zoom" src="${imagenOrigen}" id="testImage" label="Test"></div>
-						<div class="div-table-col">   <img class="imgfull zoom" src="${imagenCompare}" id="diffImage" label="Diff"></div>
-						<div class="div-table-col"><p  class="lead">Data: ${JSON.stringify(info)}</p></div>
-					</div>
-			  </div>
-			</form>
-			</body>
-        </body>`;
+        
+        <div class="card me-4">
+            <div class="card-header">
+                <h4>Scenario: ${folderScenario}</h4>
+            </div>
+            <div class="card-body">
+                <div class="post-meta"><span class="date">${folder}</span> <span class="mx-1">&bullet;</span> <span>${datetime}</span></div>
+                <div class="card">
+                <p>${JSON.stringify(info)}</p>
+                </div>
+            </div>  
+            <div class="card-body d-md-flex post-entry-2 half">
+                <div class="card col-ml-4 me-4">
+                    <div class="card-header">
+                        Version 3.41.1
+                    </div>
+                    <div class="card-body">
+                    <a href="single-post.html" class="thumbnail">
+                        <img src="${imagenReferencia}" alt="" class="img-fluid zoom">
+                    </a>
+                    </div>
+                </div>
+                <div class="card col-ml-4 me-4">
+                    <div class="card-header">
+                        Version 4.47.0
+                    </div>
+                    <div class="card-body">
+                    <a href="single-post.html" class="thumbnail">
+                        <img src="${imagenOrigen}" alt="" class="img-fluid  zoom">
+                    </a>
+                    </div>
+                </div>
+                <div class="card col-ml-4 me-4">
+                    <div class="card-header">
+                        Compare Result
+                    </div>
+                    <div class="card-body">
+                        
+                    <a href="single-post.html" class="thumbnail">
+                        <img src="${imagenCompare}" alt="" class="img-fluid zoom">
+                    </a>
+                    </div>
+                </div>
+        </div>
+      </div>`;
 }
 
 function createReport(html) {
   return `
-    <html>
-        <head>
-            <title> Pruebas de Regresión Visual </title>
-            <link href="index.css" type="text/css" rel="stylesheet">
-			<!-- Latest compiled and minified CSS -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-			<!-- jQuery library -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-			<!-- Latest compiled JavaScript -->	
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        </head>
-        <body>
-            <h1>Pruebas de Regresión Visual
-                  <a></a>
-            </h1>
-			<br>
-			<body>
-            <div id="visualizer">
-            ${html}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pruebas de Regresión Visual </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="assets/css/variables.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="#" class="logo d-flex align-items-center">
+        <h1>Resemblejs-Report Visual Regression Testing</h1>
+      </a>
+    </div>
+  </header>
+
+    <main id="main">
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12" data-aos="fade-up">
+              <h3 class="category-title">Application: Ghost</h3>
+               ${html}
+              </div>
             </div>
-			</body>
-        </body>
-    </html>`;
+          </div>
+        </section>
+    </main>
+</body>
+</html>`;
 }

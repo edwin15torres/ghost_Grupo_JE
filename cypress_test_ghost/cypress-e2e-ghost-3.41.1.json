@@ -1,0 +1,30 @@
+{
+    "projectId": "Ghost test cases",
+    "trashAssetsBeforeRuns": true,
+    "baseUrl": "http://localhost:3001",
+    "ghostUrl": "http://localhost:3001/ghost/",
+    "ghostAuthUrl": "http://localhost:3001/ghost/api/v3/admin/session",
+    "email": "jh.acosta@uniandes.edu.co",
+    "password": "Albita.182",
+    "testFiles": [
+        "1_list_post.spec.js",
+        "2_list_tags.spec.js",
+        "3_view_staff_or_members.spec.js",
+        "4_create_tag.spec.js",
+        "5_delete_tag.spec.js",
+        "6_create_page.spec.js",
+        "7_create_post.spec.js",
+        "8_edit_profile.spec.js",
+        "9_list_pages.spec.js",
+        "10_signin_signout.spec.js",
+        "11_edit_tag_success.spec.js",
+        "12_edit_post_success.spec.js",
+        "13_edit_post_negative.spec.js",
+        "14_signin_negative.spec.js"
+    ],
+    "chromeWebSecurity": false,
+    "postEditNegativeText": "http://www.uniandes.edu.co",
+    "modifyObstructiveCode": true,
+    "experimentalSourceRewriting": false,
+    "appVersion": "3.41.1"
+}
