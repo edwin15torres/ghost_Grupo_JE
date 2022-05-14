@@ -121,3 +121,78 @@ Desde una consola PowerShell haga lo siguiente:
 Nota: ejecutar sobre chrome
       ejecutar powershell en modo administrador
       Las pruebas se hicieron en Ghost versión 4.41.3
+
+## Pruebas de regresión visual
+
+Los 10 escenarios seleccionados para las pruebas de regresión visual pertenecen a 10 funcionalidades de Ghost descritas a continuación:
+
+|Nº| Funcionalidad | Escenario | Tipo de Escenario |
+|-| ------------- | ------------- | ------------- |
+|1| Listar Posts/Publicaciones | Mostrar el listado de publicaciones creada en el sitio. | Positivo |
+|2| Listar Páginas | Mostrar el listado de páginas creadas en el sitio. | Positivo |
+|3| Listar Tags | Mostrar el listado de tags creados en el sitio. | Positivo |
+|4| Ver Staff | Mostrar usuarios creados en el sitio. | Positivo |
+|5| Crear Post/Publicación | Crear un Post/Publicación en Ghost. | Positivo |
+|6| Crear Página | Creación de una página en Ghost | Positivo |
+|7| Crear Tag | Creación de un Tag en Ghost | Positivo |
+|8| Editar Perfil de Usuario | Edición de los datos del perfil de un usuario en Ghost | Positivo |
+|9| Iniciar sesión en la consola de administración | Incio de sesión con usuario y password correctos. | Positivo |
+|10| Cerrar Sesión | Cerrar una sesión activa en Ghost. | Positivo |
+
+El código de los escenarios de pruebas de extremo a extremo implementados con Cypress y la regresión visual implementada con ResembleJS se encuentran en el directorio [cypress-test-ghost](cypress-test-ghost).
+
+#### Prerequisitos
+
+- Una versión actualizada de Node.js instalada en su computadora.
+- Una versión actualizada del manejador de paquetes npm instalada en su computadora. 
+- Descargar las imangenes de docker para las versiones 4.47.0 y 3.41.1 de Ghost en la siguiente url: https://hub.docker.com/_/ghost/
+
+#### Docker
+
+- Instalar Docker desktop https://www.docker.com/products/docker-desktop/
+- Descargar la imagen 1 con la siguiente instrucción desde terminal  
+  ` $ docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.41.1 ghost:3.41.1  -- La configuración sobre el puerto 3001 en la instrucción anterior se puede cambiar por el que deseen.`
+- Descargar la imagen 2 con la siguiente instruccion desde terminal 
+ ` $ docker run -d -e url=http://localhost:3002 -p 3002:2368 --name ghost_4.47.0 ghost:4.47.0  --La configuración sobre el puerto 3002 en la instrucción anterior se puede cambiar por el que deseen.`
+- Ejecutar la aplicación Docker Desktop y debe aparecer las dos imágenes descargadas y enseguida dar en la opción "play" para ejecutarlas y se pueda ingresar desde cualquier navengador.
+
+#### Instalar librerías
+
+- Clone el repositorio de pruebas en su máquina utilizando uno de los siguientes comandos:
+
+`git clone git@github.com/edwin15torres/ghost_Grupo_JE.git`
+
+ó
+
+`git clone https://github.com/edwin15torres/ghost_Grupo_JE.git`
+
+
+- Ahora navegue hasta al directorio `cypress-test-ghost` con el siguiente comando:
+
+`cd cypress-test-ghost/`
+
+- Finalmente instale las librerías requeridas:
+
+`npm install`
+
+#### Configuración de parámetros de ejecución
+
+En una terminal ubíquese en el directorio `cypress-test-ghost` y abra los archivos `cypress-vtr-ghost-3.41.1.json` y `cypress-vtr-ghost-4.47.0.json` en el editor de texto de su preferencia. Estos archivos tienen varios parámetros de configuración que se utilizarán para ejecutar las pruebas sobre cada una de las versiones instaladas de Ghost. El archivo `cypress-vtr-ghost-3.41.1.json` contiene los parámetros de configuración de la instancia con la versión `3.41.1` de Ghost y el archivo `cypress-vtr-ghost-4.47.0.json` contiene los parámetros de configuración de la instancia con la versión `4.47.0` de Ghost. Establezca el valor de los siguientes parámetros en cada uno de los archivos de acuerdo con el valor que corresponda:
+
+- `baseUrl`
+- `ghostUrl`
+- `ghostAuthUrl`
+- `email`
+- `password`
+
+#### Ejecución de las pruebas E2E
+
+En una terminal ubíquese en el directorio `cypress-test-ghost` y ejecute el siguiente comando para correr las pruebas de extremo a extremo, recopilar las evidencias durante la ejecución de cada paso, comparar las diferencias entre las imágenes recopiladas de cada versión y obtener un reporte consolidado con el resultado:
+
+`./execute-regresion.sh`
+
+Cuando finalice la ejecución del script vaya al directorio `cypress/results` y abra el archivo `report.html` para ver el resultado de la regresión visual.
+
+#### Reporte Diferencias Resemblejs
+
+Para el registro de incidencias se utilizo JIRA, el cual esta disponible en la siguiente URL(https://github.com/edwin15torres/ghost_Grupo_JE/issues)
