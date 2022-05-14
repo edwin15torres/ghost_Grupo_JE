@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "cucumber": "^6.0.7",
-    "kraken-node": "^1.0.24"
+    "kraken-node": "^1.0.24",
+    "resemblejs": "^4.1.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^6.3.1"
