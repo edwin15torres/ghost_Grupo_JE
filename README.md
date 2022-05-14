@@ -185,13 +185,15 @@ En una terminal ubíquese en el directorio `cypress-test-ghost` y abra los archi
 - `email`
 - `password`
 
-#### Ejecución de las pruebas E2E
+#### Ejecución de las pruebas en Cypress
 
 En una terminal ubíquese en el directorio `cypress-test-ghost` y ejecute el siguiente comando para correr las pruebas de extremo a extremo, recopilar las evidencias durante la ejecución de cada paso, comparar las diferencias entre las imágenes recopiladas de cada versión y obtener un reporte consolidado con el resultado:
 
 `./execute-regresion.sh`
 
 Cuando finalice la ejecución del script vaya al directorio `cypress/results` y abra el archivo `report.html` para ver el resultado de la regresión visual.
+
+![resemble-cypress-report](https://user-images.githubusercontent.com/99263583/168408666-6a92010f-1501-4f30-bfd6-6fe5129b065a.png)
 
 #### Reporte Diferencias Resemblejs
 
