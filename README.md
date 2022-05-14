@@ -197,4 +197,4 @@ Cuando finalice la ejecución del script vaya al directorio `cypress/results` y 
 
 #### Reporte Diferencias Resemblejs
 
-Para el registro de incidencias se utilizo JIRA, el cual esta disponible en la siguiente URL(https://github.com/edwin15torres/ghost_Grupo_JE/issues)
+Para el registro de incidencias, el cual esta disponible en la siguiente URL(https://github.com/edwin15torres/ghost_Grupo_JE/issues)
