@@ -355,3 +355,92 @@ When('Yo salgo de ghost', async function() {
     let element = await this.driver.$('a[href="#/signout/"]');
     return await element.click();
 });
+
+When('Yo ingreso a cuenta', async function() {
+    let element = await this.driver.$('div[class="pe-all"]');
+    return await element.click();
+});
+
+When('Yo elijo el primer miembro', async function() {
+    let element = await this.driver.$('//body/div[2]/div/main/section/section/div[1]/table/tbody/tr[1]');
+    return await element.click();
+});
+
+When('Yo ingreso a Etiquetas', async function() {
+    let element = await this.driver.$('a[href="#/tags/"]');
+    return await element.click();
+});
+
+When('Yo adiciono Etiqueta', async function() {
+    let element = await this.driver.$('a[href="#/tags/new/"]');
+    return await element.click();
+});
+
+When('Yo agrego nombre Etiqueta {string}', async function(name) {
+    let element = await this.driver.$('#tag-name');
+    return await element.setValue(name);
+});
+
+When('Yo agrego slug Etiqueta {string}', async function(slug) {
+    let element = await this.driver.$('#tag-slug');
+    return await element.setValue(slug);
+});
+
+When('Yo salvo la etiqueta', async function() {
+    let element = await this.driver.$('span=Save');
+    return await element.click();
+});
+
+When('Prueba Page Object', async function() {
+    await loginPage.open()
+    let element = await this.driver.$('span=Save');
+    return await element.click();
+});
+
+When('Yo ingreso a cuenta de usuario', async function () {
+    let element = await this.driver.$('div[class="flex-auto flex items-center"]');
+    return await element.click();
+});
+
+When('Yo hago click en profile', async function () {
+    let element = await this.driver.$('a*=rofile');
+    return await element.click();
+});
+
+When('Yo ingreso lugar {string}', async function (dato) {
+    let element = await this.driver.$('#user-location');
+    return await element.setValue(dato);
+});
+
+When('Yo ingreso sitio web {string}', async function (dato) {
+    let element = await this.driver.$('#user-website');
+    return await element.setValue(dato);
+});  
+
+When('Yo ingreso facebook {string}', async function (dato) {
+    let element = await this.driver.$('#user-facebook');
+    return await element.setValue(dato);
+});
+
+When('Yo ingreso twitter {string}', async function (dato) {
+    let element = await this.driver.$('#user-twitter');
+    return await element.setValue(dato);
+});
+
+When('Yo ingreso la biografia {string}', async function (dato) {
+    let element = await this.driver.$('#user-bio');
+    return await element.setValue(dato);
+});
+
+When('Yo salvo datos del profile', async function () {
+    let element = await this.driver.$('span*=Save');
+    return await element.click();
+});
+
+Then('I verify number members', async function () {
+    await this.driver.saveScreenshot('./members_count.png')
+})
+
+Then('Yo tomo screenshot {string}', async function (nombrefoto) {
+    await this.driver.saveScreenshot(nombrefoto)
+})
