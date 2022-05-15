@@ -1,0 +1,26 @@
+INSTRUCCIONES
+
+0. Habra un terminal en su equipo preferiblemente como administrador.
+
+1. Cree un subdirectorio vacío con el comando mkdir <nombre> y ubíquese en él.
+
+2. cree un proyecto con el comando npm init
+
+3. Instale dependencias.
+   - npm install playwright  (Aunque no se va automatizar el browser)              
+   - npm install resemblejs
+
+4. Reemplaze la carpeta results por la carpeta results de este directorio. Esta contiene 
+   las imágenes resultantes de las ejecuiones de las pruebas de cypress y kraken.
+
+5. Copie todos los demas archivos de este directorio en la carpeta de su proyecto.
+
+6. Ejecutar:
+   a) node Ghost3_1v4_1.js     o
+   b) node Ghost4_41v4_47.js   o
+   c) node KrakenGhost_3vs4.js
+
+
+
+Nota:
+- Se supone que tiene instalado node.js
