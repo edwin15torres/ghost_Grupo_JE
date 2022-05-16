@@ -156,6 +156,7 @@ El código de los escenarios de pruebas de extremo a extremo implementados con C
  ` $ docker run -d -e url=http://localhost:3002 -p 3002:2368 --name ghost_4.47.0 ghost:4.47.0  --La configuración sobre el puerto 3002 en la instrucción anterior se puede cambiar por el que deseen.`
 - Ejecutar la aplicación Docker Desktop y debe aparecer las dos imágenes descargadas y enseguida dar en la opción "play" para ejecutarlas y se pueda ingresar desde cualquier navengador.
 
+## CYPRESS
 #### Instalar librerías
 
 - Clone el repositorio de pruebas en su máquina utilizando uno de los siguientes comandos:
@@ -195,6 +196,33 @@ Cuando finalice la ejecución del script vaya al directorio `cypress/results` y 
 
 ![resemble-cypress-report](https://user-images.githubusercontent.com/99263583/168408666-6a92010f-1501-4f30-bfd6-6fe5129b065a.png)
 
-#### Reporte Diferencias Resemblejs
+## KRAKEN
+
+- Ahora navegue hasta al directorio `cypress-test-ghost` con el siguiente comando:
+
+`cd kraken-test-ghost/`
+
+- Finalmente instale las librerías requeridas:
+
+`npm install`
+
+- Reemplaze la carpeta results de kraken con el contenido de este directorio.`results/kraken` Esta contiene 
+   las imágenes resultantes de las ejecuiones de las pruebas de cypress y kraken.
+
+- Copie todos los demas archivos de este directorio en la carpeta de su proyecto.
+
+- Ejecutar por terminal la pruebas de regresion:
+
+  `node Ghost3_1v4_1.js`  pruebas de regresion 3.41.1 vs 4.41.0 
+  `node Ghost4_41v4_47.js` pruebas de regresion 4.41.1 vs 4.47.0 
+  `node KrakenGhost_3vs4.js`  pruebas de regresion 3.41.1 vs 4.47.0 
+
+
+
+#### Reporte de 5 diferencias halladas con Resemblejs
 
 Para el registro de incidencias, el cual esta disponible en la siguiente URL(https://github.com/edwin15torres/ghost_Grupo_JE/issues)
+
+
+#### Pros y Contras
+Para el registro de pros y contras de la herramienta Resemblejs, el cual esta disponible en la siguiente URLhttps://github.com/edwin15torres/ghost_Grupo_JE/wiki/pros_contras_regresion)
