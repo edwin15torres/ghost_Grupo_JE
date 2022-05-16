@@ -1,7 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { faker } = require('@faker-js/faker');
+const  LoginPage  = require('../pageObject/login.page');
+const TagPage = require('../pageObject/tag.page');
 
-//Login
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('.email');
     return await element.setValue(email);
@@ -243,7 +244,7 @@ When('I click field value', async function() {
 When('I click field value label', async function() {
     let element = await this.driver.$('//body/div[1]/div/section/div[1]/div/div/div/div[1]/ul/input');
     return await element.click();
-});  
+});
 
 When('I click before value label', async function() {
     let element = await this.driver.$('//body/div[1]/div/section/div[1]/div/div/div/div[1]');
@@ -354,4 +355,22 @@ When('Yo ingreso a los temas', async function() {
 When('Yo salgo de ghost', async function() {
     let element = await this.driver.$('a[href="#/signout/"]');
     return await element.click();
+});
+
+// Pageobject Pattern
+Given('I signin to {kraken-string} with credentials {kraken-string} {kraken-string}', async function(url, email, password) {
+    await LoginPage.open(`${url}/signin`, this.driver);
+    await LoginPage.login(email, password, this.driver);
+});
+
+Given('I delete tag for {kraken-string}', async function(url) {
+    const name = faker.name.firstName();
+    const slug = faker.name.lastName();
+    const description = faker.datatype.string(200);
+
+    await TagPage.open(`${url}/tags/new`, this.driver);
+    await TagPage.createTag(name, slug, description, this.driver);
+
+    await TagPage.open(`${url}/tags`, this.driver);
+    await TagPage.deleteTag(name, slug, this.driver);
 });

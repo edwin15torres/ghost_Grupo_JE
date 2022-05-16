@@ -1,4 +1,6 @@
 {
     "USERNAME": "username",
-    "PASSWORD": "password"
+    "PASSWORD": "password",
+    "BASE_URL_1": "http://localhost:2368/ghost",
+    "BASE_URL_2": "http://localhost:2369/ghost"
 }
