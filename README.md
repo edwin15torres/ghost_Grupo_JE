@@ -198,7 +198,7 @@ Cuando finalice la ejecución del script vaya al directorio `cypress/results` y 
 
 ## KRAKEN
 
-- Ahora navegue hasta al directorio `cypress-test-ghost` con el siguiente comando:
+- Ahora navegue hasta al directorio `kraken-test-ghost` con el siguiente comando:
 
 `cd kraken-test-ghost/`
 
@@ -213,9 +213,9 @@ Cuando finalice la ejecución del script vaya al directorio `cypress/results` y 
 
 - Ejecutar por terminal la pruebas de regresion:
 
-  `node Ghost3_1v4_1.js`  pruebas de regresion 3.41.1 vs 4.41.0 
-  `node Ghost4_41v4_47.js` pruebas de regresion 4.41.1 vs 4.47.0 
-  `node KrakenGhost_3vs4.js`  pruebas de regresion 3.41.1 vs 4.47.0 
+- `node Ghost3_1v4_1.js`  pruebas de regresion 3.41.1 vs 4.41.0 
+- `node Ghost4_41v4_47.js` pruebas de regresion 4.41.1 vs 4.47.0 
+- `node KrakenGhost_3vs4.js`  pruebas de regresion 3.41.1 vs 4.47.0 
 
 
 
