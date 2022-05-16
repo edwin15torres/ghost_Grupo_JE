@@ -1,64 +1,54 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { faker } = require('@faker-js/faker');
-const  LoginPage  = require('../pageObject/login.page');
-const TagPage = require('../pageObject/tag.page');
+const assert = require ('assert');
+const loginPage = require('../pageobjects/login.page');
 
-When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('.email');
-    return await element.setValue(email);
-});
-
-When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('.password');
-    return await element.setValue(password);
-});
-
-Then('I see admin site', async function () {
-    let element = await this.driver.$('.ember-application');
-   return await element
-});
-
-Then('I see login error', async function () {
-    let element = await this.driver.$('.main-error');
-   return await element
-});
-
-Then('I click on element having class {string}', async function (string) {
-    let element = await this.driver.$('.' + string);
+When('Yo ingreso a cuenta de usuario', async function () {
+    let element = await this.driver.$('div[class="flex-auto flex items-center"]');
     return await element.click();
 });
 
-Then('I click on element having id {string}', async function (string) {
-    let element = await this.driver.$('#' + string);
+When('Yo hago click en profile', async function () {
+    let element = await this.driver.$('a*=rofile');
     return await element.click();
 });
 
-//Posts
-Then('I enter {string} into value {string}', async function (string1, string2) {
-    let element = await this.driver.$('#' + string1);
-    return await element.setValue(string2);
+When('Yo ingreso lugar {string}', async function (dato) {
+    let element = await this.driver.$('#user-location');
+    return await element.setValue(dato);
 });
 
-Then('I click on element having attribute {string}', async function (string) {
-    let element = await this.driver.$(string);
+When('Yo ingreso sitio web {string}', async function (dato) {
+    let element = await this.driver.$('#user-website');
+    return await element.setValue(dato);
+});  
+
+When('Yo ingreso facebook {string}', async function (dato) {
+    let element = await this.driver.$('#user-facebook');
+    return await element.setValue(dato);
+});
+
+When('Yo ingreso twitter {string}', async function (dato) {
+    let element = await this.driver.$('#user-twitter');
+    return await element.setValue(dato);
+});
+
+When('Yo ingreso la biografia {string}', async function (dato) {
+    let element = await this.driver.$('#user-bio');
+    return await element.setValue(dato);
+});
+
+When('Yo salvo datos del profile', async function () {
+    let element = await this.driver.$('span*=Save');
     return await element.click();
 });
 
-Then('I enter random string into attribute {string}', async function (id) {
-    let element = await this.driver.$(id);
-    return await element.setValue(faker.datatype.string());
-});
+Then('I verify number members', async function () {
+    await this.driver.saveScreenshot('./members_count.png')
+})
 
-
-Then('I validate draft post list item', async function () {
-    let element = await this.driver.$('.gh-posts-list-item');
-    return await element;
-});
-
-Then('I validate exists class element {string}', async function (string) {
-    let element = await this.driver.$('.' + string);
-    return await element;
-});
+Then('Yo tomo screenshot {string}', async function (nombrefoto) {
+    await this.driver.saveScreenshot(nombrefoto)
+})
 
 When('I enter ghost email {string}', async function (email) {
     let element = await this.driver.$('input[name="identification"]');
@@ -77,6 +67,26 @@ When('I click ghost login', async function() {
 
 When('I click link members', async function() {
     let element = await this.driver.$('#members_svg__Regular');
+    return await element.click();
+});
+
+When('I click link staff version3', async function() {
+    let element = await this.driver.$('a[href="#/staff/"]');
+    return await element.click();
+});
+
+When('I click link send invitation version3', async function() {
+    let element = await this.driver.$('//body/div[2]/div/main/section/header/section/button');
+    return await element.click();
+});
+
+When('I write email version3', async function() {
+    let element = await this.driver.$('input[name="email"]');
+    return await element.setValue("caviedes72@hotmail.com");
+});
+
+When('I Send invitation now version3', async function() {
+    let element = await this.driver.$('span=Send invitation now');
     return await element.click();
 });
 
@@ -244,7 +254,7 @@ When('I click field value', async function() {
 When('I click field value label', async function() {
     let element = await this.driver.$('//body/div[1]/div/section/div[1]/div/div/div/div[1]/ul/input');
     return await element.click();
-});
+});  
 
 When('I click before value label', async function() {
     let element = await this.driver.$('//body/div[1]/div/section/div[1]/div/div/div/div[1]');
@@ -357,24 +367,6 @@ When('Yo salgo de ghost', async function() {
     return await element.click();
 });
 
-// Pageobject Pattern
-Given('I signin to {kraken-string} with credentials {kraken-string} {kraken-string}', async function(url, email, password) {
-    await LoginPage.open(`${url}/signin`, this.driver);
-    await LoginPage.login(email, password, this.driver);
-});
-
-Given('I delete tag for {kraken-string}', async function(url) {
-    const name = faker.name.firstName();
-    const slug = faker.name.lastName();
-    const description = faker.datatype.string(200);
-
-    await TagPage.open(`${url}/tags/new`, this.driver);
-    await TagPage.createTag(name, slug, description, this.driver);
-
-    await TagPage.open(`${url}/tags`, this.driver);
-    await TagPage.deleteTag(name, slug, this.driver);
-});
-
 When('Yo ingreso a cuenta', async function() {
     let element = await this.driver.$('div[class="pe-all"]');
     return await element.click();
@@ -415,51 +407,3 @@ When('Prueba Page Object', async function() {
     let element = await this.driver.$('span=Save');
     return await element.click();
 });
-
-When('Yo ingreso a cuenta de usuario', async function () {
-    let element = await this.driver.$('div[class="flex-auto flex items-center"]');
-    return await element.click();
-});
-
-When('Yo hago click en profile', async function () {
-    let element = await this.driver.$('a*=rofile');
-    return await element.click();
-});
-
-When('Yo ingreso lugar {string}', async function (dato) {
-    let element = await this.driver.$('#user-location');
-    return await element.setValue(dato);
-});
-
-When('Yo ingreso sitio web {string}', async function (dato) {
-    let element = await this.driver.$('#user-website');
-    return await element.setValue(dato);
-});  
-
-When('Yo ingreso facebook {string}', async function (dato) {
-    let element = await this.driver.$('#user-facebook');
-    return await element.setValue(dato);
-});
-
-When('Yo ingreso twitter {string}', async function (dato) {
-    let element = await this.driver.$('#user-twitter');
-    return await element.setValue(dato);
-});
-
-When('Yo ingreso la biografia {string}', async function (dato) {
-    let element = await this.driver.$('#user-bio');
-    return await element.setValue(dato);
-});
-
-When('Yo salvo datos del profile', async function () {
-    let element = await this.driver.$('span*=Save');
-    return await element.click();
-});
-
-Then('I verify number members', async function () {
-    await this.driver.saveScreenshot('./members_count.png')
-})
-
-Then('Yo tomo screenshot {string}', async function (nombrefoto) {
-    await this.driver.saveScreenshot(nombrefoto)
-})
