@@ -207,7 +207,7 @@ Cuando finalice la ejecución del script vaya al directorio `cypress/results` y 
 `npm install`
 
 - Reemplaze la carpeta results de kraken con el contenido de este directorio.`results/kraken` Esta contiene 
-   las imágenes resultantes de las ejecuiones de las pruebas de cypress y kraken.
+   las imágenes resultantes de las ejecuiones de las pruebas de kraken.
 
 - Copie todos los demas archivos de este directorio en la carpeta de su proyecto.
 
