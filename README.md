@@ -225,4 +225,4 @@ Para el registro de incidencias, el cual esta disponible en la siguiente URL(htt
 
 
 #### Pros y Contras
-Para el registro de pros y contras de la herramienta Resemblejs, el cual esta disponible en la siguiente URLhttps://github.com/edwin15torres/ghost_Grupo_JE/wiki/pros_contras_regresion)
+Para el registro de pros y contras de la herramienta Resemblejs, el cual esta disponible en la siguiente URL (https://github.com/edwin15torres/ghost_Grupo_JE/wiki/pros_contras_regresion)
