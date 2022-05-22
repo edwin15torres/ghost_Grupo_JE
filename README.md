@@ -246,8 +246,8 @@ En la siguiente tabla se detallan las funcionalidades seleccionadas de Ghost par
 
 | Funcionalidad | Esquema | API example | Escenarios |
 | ------------- | ------------- | ------------- |-------|
-| Crear Tag | https://mockaroo.com/schemas/415388 | https://my.api.mockaroo.com/tags.json?key=b36b1320 | 20 |
-| Editar perfil de usuario | https://mockaroo.com/schemas/415392 | https://my.api.mockaroo.com/users.json?key=b36b1320 | 20 |
+| Crear Tag | https://mockaroo.com/schemas/415388 | https://my.api.mockaroo.com/tags.json?key=61c12520 | 20 |
+| Editar perfil de usuario | https://mockaroo.com/schemas/415392 | https://my.api.mockaroo.com/users.json?key=61c12520 | 20 |
 
 #### Instrucciones de ejecución
 
