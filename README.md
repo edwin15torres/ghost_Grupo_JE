@@ -246,8 +246,8 @@ En la siguiente tabla se detallan las funcionalidades seleccionadas de Ghost par
 
 | Funcionalidad | Esquema | API example | Escenarios |
 | ------------- | ------------- | ------------- |-------|
-| Crear Tag | https://mockaroo.com/schemas/297094 | https://my.api.mockaroo.com/tags.json?key=b36b1320 | 20 |
-| Editar perfil de usuario | https://mockaroo.com/schemas/297086 | https://my.api.mockaroo.com/users.json?key=b36b1320 | 20 |
+| Crear Tag | https://mockaroo.com/cc0b8590 | https://my.api.mockaroo.com/tags.json?key=b36b1320 | 20 |
+| Editar perfil de usuario | https://mockaroo.com/schemas/415392 | https://my.api.mockaroo.com/users.json?key=b36b1320 | 20 |
 
 #### Instrucciones de ejecución
 
@@ -306,16 +306,16 @@ El contenido de la tupla se puede encontrar en el archivo cypress\plugins\index.
 
 - Clone el repositorio de pruebas utilizando uno de los siguientes comandos:
 
-`git clone git@github.com:jpfeliciano/pruebas-e2e-ghost.git`
+`git clone git@github.com/edwin15torres/ghost_Grupo_JE.git`
 
 ó
 
-`git clone https://github.com/jpfeliciano/pruebas-e2e-ghost.git`
+`git clone https://github.com/edwin15torres/ghost_Grupo_JE.git`
 
 
-- Ahora navegue hasta el subdirectorio `pruebas-e2e-ghost/ghost-cypress-pool-data-random` con el siguiente comando:
+- Ahora navegue hasta el subdirectorio `Entrega_Semana7/ghost-cypress-pool-data-random` con el siguiente comando:
 
-`cd pruebas-e2e-ghost/ghost-cypress-pool-data-random/`
+`cd Entrega_Semana7/ghost-cypress-pool-data-random/`
 
 - Finalmente instale las librerías requeridas:
 
@@ -323,10 +323,10 @@ El contenido de la tupla se puede encontrar en el archivo cypress\plugins\index.
 
 #### Configuración de parámetros de ejecución
 
-En una terminal ubíquese en el directorio `pruebas-e2e-ghost/ghost-cypress-pool-data-random` y abra el archivo `cypress.json` en el editor de texto de su preferencia. Establezca el valor de las variables `email` y `password` con los valores que utilizó cuando creó la cuenta de usuario en Ghost.
+En una terminal ubíquese en el directorio `Entrega_Semana7/ghost-cypress-pool-data-random` y abra el archivo `cypress.json` en el editor de texto de su preferencia. Establezca el valor de las variables `email` y `password` con los valores que utilizó cuando creó la cuenta de usuario en Ghost.
 
 #### Ejecución de las pruebas E2E con generación de datos faker
 
-En una terminal ubíquese en el directorio `pruebas-e2e-ghost/ghost-cypress-pool-data-random` y ejecute el siguiente comando para probar todos los escenarios:
+En una terminal ubíquese en el directorio `Entrega_Semana7/ghost-cypress-pool-data-random` y ejecute el siguiente comando para probar todos los escenarios:
 
 `./node_modules/.bin/cypress run -C cypress.json`
