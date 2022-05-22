@@ -1,0 +1,15 @@
+{
+	"projectId": "Ghost test cases",
+	"ghostUrl": "http://localhost:2368/ghost/",
+	"ghostAuthUrl": "http://localhost:2368/ghost/api/v3/admin/session",
+	"email": "h.arias@uniandes.edu.co",
+	"password": "Ubuntu170212*",
+	"testFiles": [
+		"2_create_tag_success.spec.js",
+		"9_edit_post_negative.spec.js",
+		"10_edit_profile.spec.js",
+		"11_create_page.spec.js"
+	],
+	"postEditNegativeText": "http://www.uniandes.edu.co",
+	"chromeWebSecurity": false
+}

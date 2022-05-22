@@ -1,0 +1,15 @@
+{
+	"projectId": "Ghost test cases",
+	"ghostUrl": "http://localhost:3001/ghost/",
+	"ghostAuthUrl": "http://localhost:3001/ghost/api/v3/admin/session",
+	"email": "jh.acosta@uniandes.edu.co",
+	"password": "Albita.182",
+	"testFiles": [
+		"2_create_tag_success.spec.js",
+		"10_edit_profile.spec.js"
+	],
+	"postEditNegativeText": "http://www.uniandes.edu.co",
+	"chromeWebSecurity": false,
+	"mockarooApiUsersUrl": "https://my.api.mockaroo.com/users.json?key=b36b1320",
+	"mockarooApiTagsUrl": "https://my.api.mockaroo.com/tags.json?key=b36b1320"
+}
