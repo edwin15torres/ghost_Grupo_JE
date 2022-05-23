@@ -236,7 +236,62 @@ Para la generación de pruebas se usaron las siguientes estrategias:
 - Pool de datos (pseudo) aleatorio dinámico.
 - Escenario aleatorio. 
 
-Para esto se tuvieron en cuenta parte de los escenarios construidos con kraken y cypress.
+Para esto se tuvieron en cuenta parte de los escenarios construidos con PlayWright y cypress. con ello se cuentan de [120 escenarios](120_Escenarios) de pruebas aplicados en las diferentes estrategias de pool de datos.
+### Pool de datos a-priori
+
+Para esta estrategia se utilizaron los escenarios de pruebas de extremo-a-extremo de PlayWright y Cypress. El objetivo es disponer con datos predefinidos al cumplimiento del oráculo en el que son usados Los datos, estos datos se generaron previamente definiendo un esquema en [Mockaroo](https://mockaroo.com/) y posteriormente previsualizando los datos en formato JSON. El esquema creado se encuentra disponible en el siguiente enlace: [Esquema Kraken](https://mockaroo.com/01fe3d10).
+
+El contenido de la previsualización en formato JSON es la data que se suministra durante la ejecución de la prueba. Para leer estos datos desde los escenarios de PlayWright los valores de la previsualización fueron configurados en el archivo de propiedades (properties.json),
+#### Instrucciones de ejecución
+
+- Una versión actualizada de Node.js instalada en su computadora.
+- Una versión actualizada del manejador de paquetes npm instalada en su computadora. 
+- Instalar la versión 4.47.1 de Ghost en su máquina local desde Docker Desktop, descargue la imagen con la siguiente instrucción desde terminal  
+  `$ docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_4.47.0 ghost:4.47.0  -- La configuración sobre el puerto 3001 en la instrucción anterior se puede cambiar por el que tenga disponible en su maquina.`
+- Crear una cuenta de usuario en Ghost (Incluído en el tutorial del anterior punto).
+
+##### Instalar librerías
+
+- Clone el repositorio de pruebas utilizando uno de los siguientes comandos:
+
+`git clone git@github.com/edwin15torres/ghost_Grupo_JE.git`
+
+ó
+
+`git clone https://github.com/edwin15torres/ghost_Grupo_JE.git`
+
+#### Ejecutar PlayWright
+
+- Ahora navegue hasta el subdirectorio `Entrega_Semana7/playwright-test-ghost-pool-data` con el siguiente comando:
+
+`cd Entrega_Semana7/playwright-test-ghost-pool-data`
+
+- Instale las librerías requeridas:
+
+`npm install`
+
+- Instale las librerías de playwright:
+
+`npx playwright install`
+
+- Ejecute las pruebas en playwright:
+
+`npx playwright test`
+
+
+#### Ejecutar Cypress
+
+- Ahora navegue hasta el subdirectorio `Entrega_Semana7/cypress-test-ghost-pool-data-apriori` con el siguiente comando:
+
+`cd Entrega_Semana7/cypress-test-ghost-pool-data-apriori`
+
+- Instale las librerías requeridas:
+
+`npm install`
+
+- Ejecute las pruebas:
+
+`./node_modules/.bin/cypress run -C cypress.json`
 
 ### Pool de datos (pseudo) aleatorio dinámico
 
@@ -255,8 +310,8 @@ En la siguiente tabla se detallan las funcionalidades seleccionadas de Ghost par
 
 - Una versión actualizada de Node.js instalada en su computadora.
 - Una versión actualizada del manejador de paquetes npm instalada en su computadora. 
-- Instalar la versión 3.41.1 de Ghost en su máquina local desde Docker Desktop, descargue la imagen con la siguiente instrucción desde terminal  
-  ` $ docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.41.1 ghost:3.41.1  -- La configuración sobre el puerto 3001 en la instrucción anterior se puede cambiar por el que tenga disponible en su maquina.`
+- Instalar la versión 4.47.1 de Ghost en su máquina local desde Docker Desktop, descargue la imagen con la siguiente instrucción desde terminal  
+  ` $ docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_4.47.0 ghost:4.47.0  -- La configuración sobre el puerto 3001 en la instrucción anterior se puede cambiar por el que tenga disponible en su maquina.`
 - Crear una cuenta de usuario en Ghost (Incluído en el tutorial del anterior punto).
 
 ##### Instalar librerías
@@ -297,8 +352,8 @@ El contenido de la tupla se puede encontrar en el archivo cypress\plugins\index.
 
 - Una versión actualizada de Node.js instalada en su computadora.
 - Una versión actualizada del manejador de paquetes npm instalada en su computadora. 
-- Instalar la versión 3.41.1 de Ghost en su máquina local desde Docker Desktop, descargue la imagen con la siguiente instrucción desde terminal  
-  ` $ docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.41.1 ghost:3.41.1  -- La configuración sobre el puerto 3001 en la instrucción anterior se puede cambiar por el que tenga disponible en su máquina.`
+- Instalar la versión 4.47.1 de Ghost en su máquina local desde Docker Desktop, descargue la imagen con la siguiente instrucción desde terminal  
+  `$ docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_4.47.0 ghost:4.47.0  -- La configuración sobre el puerto 3001 en la instrucción anterior se puede cambiar por el que tenga disponible en su maquina.`
 - Crear una cuenta de usuario en Ghost (Incluído en el tutorial del anterior punto).
 
 
@@ -330,3 +385,11 @@ En una terminal ubíquese en el directorio `Entrega_Semana7/ghost-cypress-pool-d
 En una terminal ubíquese en el directorio `Entrega_Semana7/ghost-cypress-pool-data-random` y ejecute el siguiente comando para probar todos los escenarios:
 
 `./node_modules/.bin/cypress run -C cypress.json`
+
+
+#### Reporte de 5 diferencias halladas con datos aleatorios
+
+Para el registro de incidencias, el cual esta disponible en la siguiente URL(https://github.com/edwin15torres/ghost_Grupo_JE/issues)
+
+#### Pros y Contras
+Para el registro de pros y contras de la herramienta playwrigth, el cual esta disponible en la siguiente URL (https://github.com/edwin15torres/ghost_Grupo_JE/wiki/pros_contras_regresion)
