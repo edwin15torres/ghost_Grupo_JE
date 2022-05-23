@@ -239,7 +239,7 @@ Para la generación de pruebas se usaron las siguientes estrategias:
 Para esto se tuvieron en cuenta parte de los escenarios construidos con PlayWright y cypress. con ello se cuentan de [120 escenarios](https://github.com/edwin15torres/ghost_Grupo_JE/wiki/120_Escenarios) de pruebas aplicados en las diferentes estrategias de pool de datos.
 ### Pool de datos a-priori
 
-Para esta estrategia se utilizaron los escenarios de pruebas de extremo-a-extremo de PlayWright y Cypress. El objetivo es disponer con datos predefinidos al cumplimiento del oráculo en el que son usados Los datos, estos datos se generaron previamente definiendo un esquema en [Mockaroo](https://mockaroo.com/) y posteriormente previsualizando los datos en formato JSON. El esquema creado se encuentra disponible en el siguiente enlace: [Esquema Kraken](https://mockaroo.com/01fe3d10).
+Para esta estrategia se utilizaron los escenarios de pruebas de extremo-a-extremo de PlayWright y Cypress. El objetivo es disponer con datos predefinidos al cumplimiento del oráculo en el que son usados Los datos, estos datos se generaron previamente definiendo un esquema en [Mockaroo](https://mockaroo.com/) y posteriormente previsualizando los datos en formato JSON. El esquema creado se encuentra disponible en el siguiente enlace: [Esquema](https://mockaroo.com/01fe3d10).
 
 El contenido de la previsualización en formato JSON es la data que se suministra durante la ejecución de la prueba. Para leer estos datos desde los escenarios de PlayWright los valores de la previsualización fueron configurados en el archivo de propiedades (properties.json),
 #### Instrucciones de ejecución
@@ -392,4 +392,4 @@ En una terminal ubíquese en el directorio `Entrega_Semana7/ghost-cypress-pool-d
 Para el registro de incidencias, el cual esta disponible en la siguiente URL(https://github.com/edwin15torres/ghost_Grupo_JE/issues)
 
 ### Pros y Contras
-Para el registro de pros y contras de la herramienta playwrigth, el cual esta disponible en la siguiente URL (https://github.com/edwin15torres/ghost_Grupo_JE/wiki/pros_contras_regresion)
+Para el registro de pros y contras de la herramienta playwrigth, el cual esta disponible en la siguiente URL (https://github.com/edwin15torres/ghost_Grupo_JE/wiki/Playwrigth)
