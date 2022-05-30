@@ -9,6 +9,12 @@
 | Rafael Ortiz | rd.ortizr1@uniandes.edu.co |
 | Luis Eduardo Padilla Caviedes    | l.padillac2@uniandes.edu.co  |
 
+## Estrategia de pruebas
+
+El documento con la definición de la estrategia de pruebas se encuentra disponible en el siguiente enlace:
+
+[Documento estrategia de pruebas](https://drive.google.com/file/d/1pcfcCfxIaX1G3yhfkqgN3TYyc5DNY4bd/view?usp=sharing)
+
 ## Pruebas e2e con Kraken
 
 Los 18 escenarios seleccionados para las pruebas con Kraken pertenecen a 10 funcionalidades de Ghost descritas a continuación:
