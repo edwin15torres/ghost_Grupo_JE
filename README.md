@@ -13,7 +13,8 @@
 
 El documento con la definición de la estrategia de pruebas se encuentra disponible en el siguiente enlace:
 
-[Documento estrategia de pruebas](https://drive.google.com/file/d/1pcfcCfxIaX1G3yhfkqgN3TYyc5DNY4bd/view?usp=sharing)
+[Documento estrategia de pruebas]([Documento estrategia de pruebas](https://drive.google.com/file/d/1QSeT5HI7D0ybGqyWFUhOjL5H413iBB-c/view?usp=sharing)
+)
 
 ## Pruebas e2e con Kraken
 
